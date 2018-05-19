@@ -1,5 +1,22 @@
 # Heavy patches on ESP8266
 
+## How to
+Download as zip and extract in your Arduino sketchbook folder, rename and remove "-master" then start the Arduino IDE and open "heavy_esp8266" from the sketchbook menu.  
+Set the ESP8266 **core frequency to 160MHz** in the Tools menu.  
+Even without an I2S DAC, Serial will print the processing time of one block in microseconds, on every block, you can test performance this way. Note: Serial rate is set at 1000000.
+
+In my case, pinout was as follow:
+
+| Wemos D1 Mini (Pro)  | I2S DAC |
+| ------------- | ------------- |
+| 5V/3.3V  | Vcc  |
+| GND  | GND  |
+| RX  | Data  |
+| D8  | BCLK |
+| D4  | LRCLK/WCK |
+
+
+#### Aknowledgments:
   * Patch in this sketch is: https://enzienaudio.com/h/FergusL/esp8266/
   * Based on https://github.com/bbx10/SFX-I2S-web-trigger/
 
